@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { hot } from 'react-hot-loader';
+
+const App = hot(module)(
+  () => {
+    return (
+      <div>
+        Get message from backend
+      </div>     
+    )
+  }
+)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <a
-      href="127.0.0.1:8080/hello"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Get message from backend
-    </a>
-    <div>{/127.0.0.1:8080/hello}</div>
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 );
