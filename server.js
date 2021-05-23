@@ -14,10 +14,15 @@ app.use(
   })
 );
 
-app.get('/hello', function(req, res) {
+app.get('/', function(req, res) {
+  res.sendFile(config.output.path + '/index.html');
+//  req.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+/*
+app.get('/', function(req, res) {
   res.json('Hello from the backend!');
 })
-
+*/
 app.listen(port, function() {
   console.log(`Listening on Port: ${port}!\n`);
 });
