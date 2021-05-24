@@ -1,11 +1,11 @@
 import _ from 'lodash';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App/App';
 
-function component() {
-  const element = document.createElement('div');
-
-  element.innerHTML = _.join(['hello', 'world'], ' ');
-
-  return element;
-}
-
-document.body.appendChild(component());
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+)
