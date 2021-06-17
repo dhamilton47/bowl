@@ -1,4 +1,5 @@
-import React from "react";
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 // import React from "react";
 import { Route, Link } from 'react-router-dom';
 import { Switch } from 'react-router';
@@ -42,14 +43,35 @@ export default () => {
           >
             <Link
               to="/team-info"
+              sx={{
+                color: 'gray',
+                fontSize: '1.25rem',
+                height: '60px',
+                lineHeight: '60px',
+                padding: '0 10px',
+                textDecoration: 'none',
+                width: '150px',
+              }}
             >
               Team Information
             </Link>
           </li>
           <li
+            sx={{
+              display: 'inline-block',
+            }}
           >
             <Link
               to="/match-info"
+              sx={{
+                color: 'gray',
+                fontSize: '1.25rem',
+                height: '60px',
+                lineHeight: '60px',
+                padding: '0 10px',
+                textDecoration: 'none',
+                width: '150px',
+              }}
             >
               Match Information
             </Link>
