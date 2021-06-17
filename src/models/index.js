@@ -22,7 +22,11 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.bowling = require('./bowling.model.js')(sequelize, Sequelize);
-db.match = require('./match.model.js')(sequelize, Sequelize);
+db.matches = require('./match.model.js')(sequelize, Sequelize);
+db.teams = require('./team.model.js')(sequelize, Sequelize);
+db.games = require('./game.model.js')(sequelize, Sequelize);
+db.frames = require('./frame.model.js')(sequelize, Sequelize);
+db.balls = require('./ball.model.js')(sequelize, Sequelize);
+db.total_scores = require('./total_score.model.js')(sequelize, Sequelize);
 
 module.exports = db;
