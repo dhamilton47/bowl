@@ -8,6 +8,9 @@ module.exports = (sequelize, Sequelize) => {
     },
     home: {
       type: Sequelize.BOOLEAN
+    },
+    date: {
+      type: Sequelize.DATE
     }
   });
 
