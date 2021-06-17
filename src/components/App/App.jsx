@@ -4,6 +4,13 @@ import { jsx } from 'theme-ui';
 import { Route, Link } from 'react-router-dom';
 import { Switch } from 'react-router';
 
+import Splash from '../Splash/Splash'
+import Match from '../Match/Match';
+import AddMatch from '../Match/AddMatch';
+import TeamsList from '../Team/TeamsList';
+import AddTeam from '../Team/AddTeam';
+import Game from '../Game/Game';
+
 export default () => {
   return (
     <div
