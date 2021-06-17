@@ -39,8 +39,9 @@ app.get('/', function(req, res) {
   res.sendFile(config.output.path + '/index.html');
 });
 
-require('./src/routes/bowling.routes')(app);
 require('./src/routes/match.routes')(app);
+require('./src/routes/team.routes')(app);
+require('./src/routes/game.routes')(app);
 
 app.listen(port, function() {
   console.log(`Listening on Port: ${port}!\n`);
