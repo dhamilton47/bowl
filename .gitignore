@@ -76,4 +76,4 @@ typings/
 .fusebox/
 
 # MySQL Config
-src/config/db.config.js
+config/db.config.js
