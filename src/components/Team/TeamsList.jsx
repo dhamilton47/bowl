@@ -2,7 +2,6 @@
 import { jsx } from 'theme-ui';
 import { useState, useEffect } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-// import Splash from '../Splash/Splash'
 
 import AddTeam from './AddTeam';
 import TeamDataService from '../../services/team.service';
