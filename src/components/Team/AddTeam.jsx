@@ -54,7 +54,7 @@ export default () => {
         submitted ? 
           <h5
             sx={{
-              backgroundColor: `honeydew`,
+              backgroundColor: `successMuted`,
               width: `200px`,
               height: `3rem`,
               lineHeight: `3rem`,
@@ -141,8 +141,8 @@ export default () => {
           <button
             type="button"
             sx={{
-              color: `white`,
-              backgroundColor: `green`,
+              color: `background`,
+              backgroundColor: `success`,
               borderRadius: `3px`,
               m: `5px 10px`
             }}
@@ -154,8 +154,8 @@ export default () => {
           <button
             type="submit"
             sx={{
-              color: `white`,
-              backgroundColor: `green`,
+              color: `background`,
+              backgroundColor: `success`,
               borderRadius: `3px`,
               m: `5px 10px`
             }}
