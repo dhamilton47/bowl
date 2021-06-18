@@ -18,7 +18,7 @@ export default () => {
     >
       <nav
         sx={{
-          background: 'black',
+          backgroundColor: 'text',
           display: 'block',
           listStyle: 'none',
           width: '100%',
@@ -27,7 +27,7 @@ export default () => {
       >
         <a href="/"
           sx={{
-            color: 'white',
+            color: 'background',
             fontSize: '2rem',
             height: '60px',
             lineHeight: '60px',
