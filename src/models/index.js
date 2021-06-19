@@ -1,6 +1,6 @@
 const dbConfig = require('../../config/db.config.js');
 
-const Sequelize = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize(
   dbConfig.DB,
   dbConfig.USER,
@@ -21,9 +21,11 @@ const db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
+db.DataTypes = DataTypes;
 
-db.matches = require('./match.model.js')(sequelize, Sequelize);
-db.teams = require('./team.model.js')(sequelize, Sequelize);
+db.matches = require('./match.model.js')(sequelize, Sequelize, DataTypes);
+db.teams = require('./team.model.js')(sequelize, Sequelize, DataTypes);
+db.players = require('./player.model.js')(sequelize, Sequelize, DataTypes);
 db.games = require('./game.model.js')(sequelize, Sequelize);
 db.frames = require('./frame.model.js')(sequelize, Sequelize);
 db.balls = require('./ball.model.js')(sequelize, Sequelize);

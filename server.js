@@ -41,6 +41,7 @@ app.get('/', function(req, res) {
 
 require('./src/routes/match.routes')(app);
 require('./src/routes/team.routes')(app);
+require('./src/routes/player.routes')(app);
 require('./src/routes/game.routes')(app);
 
 app.listen(port, function() {
