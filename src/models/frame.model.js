@@ -1,44 +1,18 @@
-module.exports = (sequelize, Sequelize) => {
+module.exports = (sequelize, Sequelize, DataTypes) => {
   const Frame = sequelize.define("frame", {
-    game_id: {
-      type: Sequelize.INTEGER
-    },
-    frame_number: {
-      type: Sequelize.INTEGER
-    },
-    score_before: {
-      type: Sequelize.INTEGER
-    },
-    ball1: {
-      type: Sequelize.INTEGER
-    },
-    ball2: {
-      type: Sequelize.INTEGER
-    },
-    ball3: {
-      type: Sequelize.INTEGER
-    },
-    bonus1: {
-      type: Sequelize.INTEGER
-    },
-    bonus2: {
-      type: Sequelize.INTEGER
-    },
-    score_after: {
-      type: Sequelize.INTEGER
-    },
-    is_started: {
-      type: Sequelize.BOOLEAN
-    },
-    is_ball3: {
-      type: Sequelize.BOOLEAN
-    },
-    is_bonus1: {
-      type: Sequelize.BOOLEAN
-    },
-    is_bonus2: {
-      type: Sequelize.BOOLEAN
-    }
+    gameId: DataTypes.INTEGER,
+    frame_number: DataTypes.INTEGER,
+    score_before: DataTypes.INTEGER,
+    ball1: DataTypes.INTEGER,
+    ball2: DataTypes.INTEGER,
+    ball3: DataTypes.INTEGER,
+    bonus1: DataTypes.INTEGER,
+    bonus2: DataTypes.INTEGER,
+    score_after: DataTypes.INTEGER,
+    is_started: DataTypes.BOOLEAN,
+    is_ball3: DataTypes.BOOLEAN,
+    is_bonus1: DataTypes.BOOLEAN,
+    is_bonus2: DataTypes.BOOLEAN,
   });
 
   return Frame;
