@@ -31,4 +31,27 @@ db.frames = require('./frame.model.js')(sequelize, DataTypes);
 db.balls = require('./ball.model.js')(sequelize, DataTypes);
 //db.total_scores = require('./total_score.model.js')(sequelize, DataTypes);
 
+db.matches.hasMany(db.teams);
+db.teams.belongsTo(db.matches);
+
+db.matches.hasMany(db.games);
+db.games.belongsTo(db.matches);
+
+db.teams.hasMany(db.players);
+db.players.belongsTo(db.teams);
+
+db.players.hasMany(db.games);
+db.games.belongsTo(db.players);
+
+db.games.hasMany(db.frames);
+db.frames.belongsTo(db.games);
+
+db.frames.hasMany(db.balls);
+db.balls.belongsTo(db.frames);
+
+// db.games.hasMany(db.total_scores);
+// db.total_scores.belongsTo(db.games);
+
+
+
 module.exports = db;
