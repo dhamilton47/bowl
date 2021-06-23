@@ -19,7 +19,26 @@ export default {
   borders: {
     scaffold: `red 1px solid`,
   },
+  as: {
+    brand: {
+      color: 'background',
+      fontSize: '2rem',
+      height: '60px',
+      lineHeight: '60px',
+      padding: '0 10px',
+      textDecoration: 'none',
+      width: '150px',
+    },
+  },
   buttons: {
+    information: {
+      color: 'background',
+      bg: 'primary',
+      width: 100,
+      height: 20,
+      borderRadius: `3px`,
+      cursor: `pointer`,
+    },
     success: {
       color: 'background',
       bg: 'success',
@@ -47,6 +66,30 @@ export default {
     },
   },
   lis: {
+    height:`20px`,
+    top_nav: {
+      color: 'gray',
+      fontSize: '1.25rem',
+      height: '60px',
+      lineHeight: '60px',
+      padding: '0 10px',
+      textDecoration: 'none',
+      width: '150px',
+    },
+    primary_small: {
+      bg: 'primary',
+      borderRadius: `3px`,
+      color: 'background',
+      cursor: `pointer`,
+      fontSize: `14px`,
+      fontWeight: 700,
+      height: 20,
+      listStyle: `none`,
+      mr: `5px`,
+      p: `3px 3px`,
+      textAlign: 'center',
+      width: 50,
+    },
     success_small: {
       bg: 'success',
       borderRadius: `3px`,
@@ -60,7 +103,6 @@ export default {
       p: `3px 3px`,
       textAlign: 'center',
       width: 50,
-      width: 150,
     },
     success_medium: {
       bg: 'success',
