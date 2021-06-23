@@ -1,8 +1,8 @@
 import http from '../http-common';
 
-class BowlingDataService {
+class MatchDataService {
   getAll() {
-    return http.get('/match');
+    return http.get('/matches');
   }
 
   get(id) {
@@ -10,23 +10,23 @@ class BowlingDataService {
   }
 
   create(data) {
-    return http.post('/match', data);
+    return http.post('/matches', data);
   }
 
   update(id, data) {
-    return http.put(`/match/${id}`, data);
+    return http.put(`/matches/${id}`, data);
   }
   delete(id) {
-    return http.delete(`/match/${id}`);
+    return http.delete(`/matches/${id}`);
   }
 
   deleteAll() {
-    return http.delete('/match');
+    return http.delete('/matches');
   }
 
   findByTitle(title) {
-    return http.get(`/match?title=${title}`);
+    return http.get(`/matches?title=${title}`);
   }
 }
 
-export default new BowlingDataService();
+export default new MatchDataService();
