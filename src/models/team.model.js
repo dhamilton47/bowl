@@ -1,17 +1,10 @@
-module.exports = (sequelize, Sequelize) => {
+module.exports = (sequelize, Sequelize, DataTypes) => {
   const Team = sequelize.define("team", {
-    school_name: {
-      type: Sequelize.STRING
-    },
-    school_mascot: {
-      type: Sequelize.STRING
-    },
-    city: {
-      type: Sequelize.STRING
-    },
-    state: {
-      type: Sequelize.STRING
-    }
+    matchId: DataTypes.INTEGER,
+    school_name: DataTypes.STRING,
+    school_mascot: DataTypes.STRING,
+    city: DataTypes.STRING,
+    state: DataTypes.STRING
   });
 
   return Team;
