@@ -10,8 +10,12 @@ import AddMatch from '../Match/AddMatch';
 import TeamsList from '../Team/TeamsList';
 import AddTeam from '../Team/AddTeam';
 import Game from '../Game/Game';
+import Modal from './Modal';
+import useModal from './useModal';
 
 export default () => {
+  const {isVisible, toggleModal} = useModal();
+
   return (
     <div
       sx={{ fontFamily: `Arial` }}
@@ -103,6 +107,12 @@ export default () => {
           {/*<Route exact path="/team-info" component={Team} />
           */}
         </Switch>
+      </div>
+      <div>
+        <button onClick={toggleModal}>
+          Show modal
+        </button>
+        <Modal isVisible={isVisible} hideModal={toggleModal} />
       </div>
     </div>
   )
