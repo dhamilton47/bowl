@@ -5,7 +5,7 @@ const Op = db.sequelize.Op;
 // Create and save
 exports.create = (req, res) => {
   // Valid request
-  if (!req.body.name) {
+  if (!req.body.last_name) {
     res.status(400).send({
       message: "Content cannot be empty!"
     });
@@ -14,8 +14,10 @@ exports.create = (req, res) => {
 
   // Create
   const player = {
-    schoolId: req.body.schoolId,
-    name: req.body.school,
+    teamId: req.body.teamId,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    year: req.body.year
   };
   console.log(player);
   // Save in the database
@@ -90,7 +92,7 @@ exports.update = (req, res) => {
       });
     });
 };
-
+*/
 // Delete a Player by id
 exports.delete = (req, res) => {
   const id = req.params.id;
@@ -116,7 +118,7 @@ exports.delete = (req, res) => {
       });
     });
 };
-*/
+
 // Delete all Teams from the database
 exports.deleteAll = (req, res) => {
   Player.destroy({
