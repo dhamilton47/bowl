@@ -1,14 +1,8 @@
-module.exports = (sequelize, Sequelize) => {
+module.exports = (sequelize, Sequelize, DataTypes) => {
   const TotalScore = sequelize.define("total_score", {
-    game_id: {
-      type: Sequelize.INTEGER
-    },
-    score: {
-      type: Sequelize.INTEGER
-    },
-    is_final: {
-      type: Sequelize.BOOLEAN
-    }
+    gameId: DataTypes.INTEGER,
+    score: DataTypes.INTEGER,
+    is_final: DataTypes.BOOLEAN
   });
 
   return TotalScore;
