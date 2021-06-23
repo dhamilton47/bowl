@@ -8,11 +8,7 @@ class TeamDataService {
   get(id) {
     return null;
   }
-/*
-  getNew() {
-    return http.get('/team-info/add-team');
-  }
-*/
+
   create(data) {
     return http.post('/teams', data);
   }
