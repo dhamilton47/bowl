@@ -8,7 +8,7 @@ module.exports = app => {
 
   // Retrieve all Matches
   router.get('/', matches.findAll);
-
+/*
   // Retrieve all published Matches
   router.get('/published', matches.findAllPublished);
 
@@ -17,7 +17,7 @@ module.exports = app => {
 
   // Delete a Match with id
   router.delete('/:id', matches.delete);
-
+*/
   // Delete all Matches
   router.delete('/', matches.deleteAll);
 
