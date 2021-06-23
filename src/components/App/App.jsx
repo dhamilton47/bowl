@@ -5,11 +5,13 @@ import { Route, Link } from 'react-router-dom';
 import { Switch } from 'react-router';
 
 import Splash from '../Splash/Splash'
-import Match from '../Match/Match';
+import MatchesList from '../Match/MatchesList';
 import AddMatch from '../Match/AddMatch';
+import ScoreSheet from '../Match/ScoreSheet';
 import TeamsList from '../Team/TeamsList';
 import AddTeam from '../Team/AddTeam';
-import Game from '../Game/Game';
+import TeamRoster from '../Player/TeamRoster';
+import AddPlayer from '../Player/AddPlayer';
 import Modal from './Modal';
 import useModal from './useModal';
 
@@ -29,62 +31,38 @@ export default () => {
           height: '60px',
         }}
       >
-        <a href="/"
-          sx={{
-            color: 'background',
-            fontSize: '2rem',
-            height: '60px',
-            lineHeight: '60px',
-            padding: '0 10px',
-            textDecoration: 'none',
-            width: '150px',
-          }}
-        >
+        <a href="/" sx={{ variant: 'as.brand' }}>
           Bowling Experimenting
         </a>
-        <div
-          sx={{
-            display: 'inline-block',
-          }}
+        <div sx={{ display: 'inline-block' }}
         >
-          <li
-            sx={{
-              display: 'inline-block',
-            }}
-          >
-            <Link
-              to="/team-info"
-              sx={{
-                color: 'gray',
-                fontSize: '1.25rem',
-                height: '60px',
-                lineHeight: '60px',
-                padding: '0 10px',
-                textDecoration: 'none',
-                width: '150px',
-              }}
-            >
+          <li sx={{ display: 'inline-block' }}>
+            <Link to="/match-info" sx={{ variant: 'lis.top_nav' }}>
+              Match Information
+            </Link>
+          </li>
+
+          <li sx={{ display: 'inline-block' }}>
+            <Link to="/scoresheet" sx={{ variant: 'lis.top_nav' }}>
+              Score Sheet
+            </Link>
+          </li>
+
+          <li sx={{ display: 'inline-block' }}>
+            <Link to="/team-info" sx={{ variant: 'lis.top_nav' }}>
               Team Information
             </Link>
           </li>
-          <li
-            sx={{
-              display: 'inline-block',
-            }}
-          >
-            <Link
-              to="/match-info"
-              sx={{
-                color: 'gray',
-                fontSize: '1.25rem',
-                height: '60px',
-                lineHeight: '60px',
-                padding: '0 10px',
-                textDecoration: 'none',
-                width: '150px',
-              }}
-            >
-              Match Information
+
+          <li sx={{ display: 'inline-block' }}>
+            <Link to="/team-roster" sx={{ variant: 'lis.top_nav' }}>
+              Team Roster
+            </Link>
+          </li>
+
+          <li sx={{ display: 'inline-block' }}>
+            <Link to="/add-player" sx={{ variant: 'lis.top_nav' }}>
+              Add Player
             </Link>
           </li>
         </div>
@@ -93,19 +71,13 @@ export default () => {
       <div sx={{ mt: `60px` }} >
         <Switch>
           <Route exact path="/" component={Splash} />
-          <Route exact path="/match-info" component={Match} />
-          {/*
-          <Route exact path="/match-info/add" component={AddMatch} />
-          <Route exact path="/match-info/:id" component={Match} />
-          */}
+          <Route exact path="/match-info" component={MatchesList} />
+          <Route exact path="/add-match" component={AddMatch} />
+          <Route exact path="/scoresheet" component={ScoreSheet} />
           <Route exact path="/team-info" component={TeamsList} />
           <Route exact path="/add-team" component={AddTeam} />
-          {/*
-          <Route path="/team-info/add" component={AddTeam} />
-          <Route path="/team-info/:id" component={Team} />
-          
-          {/*<Route exact path="/team-info" component={Team} />
-          */}
+          <Route exact path="/team-roster" component={TeamRoster} />
+          <Route exact path="/add-player" component={AddPlayer} />
         </Switch>
       </div>
       <div>
