@@ -1,11 +1,27 @@
-import _ from 'lodash';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import App from './components/App/App';
+import { hot } from 'react-hot-loader';
+import { ThemeProvider } from 'theme-ui';
+import theme from '../theme'
 
-function component() {
-  const element = document.createElement('div');
+const AppWrapped = hot(module)(
+  () => {
+    return (
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>        
+      </ThemeProvider>
+    )
+  }
+)
 
-  element.innerHTML = _.join(['hello', 'world'], ' ');
-
-  return element;
-}
-
-document.body.appendChild(component());
+ReactDOM.render(
+  <React.StrictMode>
+    <AppWrapped />
+  </React.StrictMode>,
+  
+  document.getElementById('root')
+)
