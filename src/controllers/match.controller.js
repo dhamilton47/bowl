@@ -1,11 +1,11 @@
 const db = require('../models');
-const Match = db.match;
+const Match = db.matches;
 const Op = db.sequelize.Op;
 
 // Create and save a new Match
 exports.create = (req, res) => {
   // Valid request
-  if (!req.body.team) {
+  if (!req.body.home_team) {
     res.status(400).send({
       message: "Content cannot be empty!"
     });
@@ -14,9 +14,10 @@ exports.create = (req, res) => {
 
   // Create a Match
   const match = {
-    team: req.body.team,
-    opponent: req.body.opponent,
-    home: req.body.home ? req.body.home : false
+    home_team: req.body.home_team,
+    away_team: req.body.away_team,
+    location: req.body.location,
+    date: req.body.date
   };
 
   // Save Match in the database
@@ -35,9 +36,10 @@ exports.create = (req, res) => {
 // Retrieve all Matches from the database
 exports.findAll = (req, res) => {
   const title = req.query.team;
-  var condition = team ? { team: { [Op.like]: `%${team}%` } } : null;
+  //var condition = match ? { match: { [Op.like]: `%${match}%` } } : null;
 
-  Match.findAll({ where: condition })
+  // Match.findAll({ where: condition })
+  Match.findAll()
     .then(data => {
       res.send(data);
     })
