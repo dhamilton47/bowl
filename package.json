@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve",
     "build": "babel src -d public",
-    "serve": "npx nodemon server.js"
+    "serve": "npx nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "Dan J. Hamilton",
@@ -31,15 +32,19 @@
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dns-packet": ">=1.3.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "glob-parent": "^6.0.0",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.7",
+    "normalize-url": ">=4.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "sequelize": "^6.6.2",
-    "theme-ui": "^0.9.1"
+    "theme-ui": "^0.9.1",
+    "ws": ">=6.2.2"
   },
   "browserslist": {
     "production": [
@@ -52,5 +57,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhamilton47/bowl.git"
   }
 }
