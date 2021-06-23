@@ -1,17 +1,9 @@
-module.exports = (sequelize, Sequelize) => {
+module.exports = (sequelize, Sequelize, DataTypes) => {
   const Match = sequelize.define("match", {
-    team: {
-      type: Sequelize.STRING
-    },
-    opponent: {
-      type: Sequelize.STRING
-    },
-    home: {
-      type: Sequelize.BOOLEAN
-    },
-    date: {
-      type: Sequelize.DATE
-    }
+    home_team: DataTypes.STRING,
+    away_team: DataTypes.STRING,
+    location: DataTypes.STRING,
+    date: DataTypes.DATE
   });
 
   return Match;
