@@ -1,4 +1,4 @@
-module.exports = (sequelize, Sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const Ball = sequelize.define("ball", {
     frameId: DataTypes.INTEGER,
     pins: DataTypes.INTEGER,

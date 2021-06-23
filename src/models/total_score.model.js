@@ -1,4 +1,4 @@
-module.exports = (sequelize, Sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const TotalScore = sequelize.define("total_score", {
     gameId: DataTypes.INTEGER,
     score: DataTypes.INTEGER,

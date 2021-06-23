@@ -1,4 +1,4 @@
-module.exports = (sequelize, Sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const Game = sequelize.define("game", {
     matchId: DataTypes.INTEGER,
     playerId: DataTypes.INTEGER,

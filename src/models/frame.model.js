@@ -1,4 +1,4 @@
-module.exports = (sequelize, Sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   const Frame = sequelize.define("frame", {
     gameId: DataTypes.INTEGER,
     frame_number: DataTypes.INTEGER,
