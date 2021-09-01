@@ -6,7 +6,7 @@ class PlayerDataService {
   }
 
   get(id) {
-    return null;
+    return http.get(`/players/${id}`);
   }
 
   create(data) {

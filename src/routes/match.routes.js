@@ -11,13 +11,13 @@ module.exports = app => {
 /*
   // Retrieve all published Matches
   router.get('/published', matches.findAllPublished);
-
+*/
   // Retrieve a single Match with id
   router.get('/:id', matches.findOne);
 
   // Delete a Match with id
   router.delete('/:id', matches.delete);
-*/
+
   // Delete all Matches
   router.delete('/', matches.deleteAll);
 

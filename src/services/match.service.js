@@ -6,7 +6,7 @@ class MatchDataService {
   }
 
   get(id) {
-    return null;
+    return http.get(`/matches/${id}`);
   }
 
   create(data) {
@@ -16,6 +16,7 @@ class MatchDataService {
   update(id, data) {
     return http.put(`/matches/${id}`, data);
   }
+  
   delete(id) {
     return http.delete(`/matches/${id}`);
   }

@@ -6,7 +6,7 @@ class TeamDataService {
   }
 
   get(id) {
-    return null;
+    return http.get(`/teams/${id}`);
   }
 
   create(data) {
