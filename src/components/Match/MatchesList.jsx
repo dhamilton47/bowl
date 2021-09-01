@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import DataService from '../../services/match.service';
+import { formatDate } from '../../utilities/utilities';
 
 export default () => {
   const [search, setSearch] = useState('');
@@ -30,6 +31,15 @@ export default () => {
     setCurrentIndex(-1);
   }
 
+  const onDelete = (id) => {
+    DataService.delete(id)
+      .then(res => {
+        console.log(res.data);
+        refreshPointer();
+      })
+      .catch(e => console.log(e));
+  }
+
   const onDeleteAll = () => {
     DataService.deleteAll()
       .then(res => {
@@ -49,7 +59,9 @@ export default () => {
     console.log(matches);
   }
 
-  const editMatchInfo = () => {}
+  const editMatchInfo = () => {
+    
+  }
 
   const setActive = (value, index) => {
     setCurrent(value);
@@ -123,7 +135,7 @@ export default () => {
                       <tr>
                         <td sx={{ textAlign: `left`, width:`175px` }}>{match.home_team}</td>
                         <td sx={{ textAlign: `left`, width:`175px` }}>{match.away_team}</td>
-                        <td sx={{ textAlign: `left`, width:`50px` }}>{new Intl.DateTimeFormat('en-US').format(new Date(match.date))}</td>
+                        <td sx={{ textAlign: `left`, width:`50px` }}>{formatDate(match.date)}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -187,7 +199,7 @@ export default () => {
                   <div sx={{ display: `block` }}><strong>Home Team:</strong>{current.home_team}</div>
                   <div sx={{ display: `block` }}><strong>Away Team:</strong>{current.away_team}</div>
                   <div sx={{ display: `block` }}><strong>Location:</strong>{current.location}</div>
-                  <div sx={{ display: `block` }}><strong>Date:</strong>{new Intl.DateTimeFormat('en-US').format(new Date(current.date))}</div>
+                  <div sx={{ display: `block` }}><strong>Date:</strong>{formatDate(current.date)}</div>
                 </div>
               </div>
 
@@ -198,14 +210,25 @@ export default () => {
                     width: `100%`
                   }}
                 >
-                  <li
+                  <Link
+                    to={`/match-info/${current.id}`}
                     sx={{
                       variant: `lis.caution_small`,
                       display: `inline-block`,
+                      textDecoration: `none`
                     }}
-                    onClick={editMatchInfo}
                   >
                     Edit
+                  </Link>
+
+                  <li
+                    sx={{
+                      variant: `lis.warning_small`,
+                      display: `inline-block`,
+                    }}
+                    onClick={() => onDelete(current.id)}
+                  >
+                    Delete
                   </li>
                 </div>        
               </nav>

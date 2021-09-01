@@ -7,6 +7,7 @@ import { Switch } from 'react-router';
 import Splash from '../Splash/Splash'
 import MatchesList from '../Match/MatchesList';
 import AddMatch from '../Match/AddMatch';
+import Match from '../Match/Match';
 import ScoreSheet from '../Match/ScoreSheet';
 import TeamsList from '../Team/TeamsList';
 import AddTeam from '../Team/AddTeam';
@@ -73,16 +74,18 @@ export default () => {
 
       <div sx={{ mt: `60px` }} >
         <Switch>
-          <Route exact path="/" component={Splash} />
-          <Route exact path="/match-info" component={MatchesList} />
+          <Route path="/match-info/:id" component={Match} />
+          <Route path="/match-info" component={MatchesList} />
           <Route exact path="/add-match" component={AddMatch} />
           <Route exact path="/scoresheet" component={ScoreSheet} />
           <Route exact path="/team-info" component={TeamsList} />
           <Route exact path="/add-team" component={AddTeam} />
           <Route exact path="/team-roster" component={TeamRoster} />
           <Route exact path="/add-player" component={AddPlayer} />
+          <Route path="/" component={Splash} />
         </Switch>
       </div>
+
       <div>
         <button onClick={toggleModal}>
           Show modal
