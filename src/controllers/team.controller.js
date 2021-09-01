@@ -38,8 +38,8 @@ exports.findAll = (req, res) => {
   const title = req.query.team;
 //  var condition = team ? { team: { [Op.like]: `%${team}%` } } : null;
 
-Team.findAll()
-//Team.findAll({ where: condition })
+  Team.findAll()
+  //Team.findAll({ where: condition })
     .then(data => {
       res.send(data);
     })
