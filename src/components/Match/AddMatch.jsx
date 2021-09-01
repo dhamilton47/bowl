@@ -2,6 +2,8 @@
 import { jsx } from 'theme-ui';
 import { useState} from "react";
 import MatchDataService from '../../services/match.service';
+import Status from '../App/Status';
+import useStatus from '../App/useStatus';
 
 export default () => {
   const { matchId, setMatchId } = useState('');

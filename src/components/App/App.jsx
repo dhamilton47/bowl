@@ -14,9 +14,12 @@ import TeamRoster from '../Player/TeamRoster';
 import AddPlayer from '../Player/AddPlayer';
 import Modal from './Modal';
 import useModal from './useModal';
+import Status from './Status';
+import useStatus from './useStatus';
 
 export default () => {
   const {isVisible, toggleModal} = useModal();
+//  const {isVisible, toggleModal} = useStatus();
 
   return (
     <div
