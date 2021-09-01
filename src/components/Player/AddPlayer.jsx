@@ -1,26 +1,20 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useState} from "react";
+import { Link, Redirect } from 'react-router-dom';
+
 import PlayerDataService from '../../services/player.service';
 
 export default () => {
-  /*
-  const player = {
-    playerId: 0,
-    first_name: "",
-    last_name: "",
-    year: 0
-  };
-*/
-  const [ teamId, setTeamId ] = useState(null);
-  const [ firstName, setFirstName ] = useState('');
-  const [ lastName, setLastName ] = useState('');
-  const [ year, setYear ] = useState(null);
+  const [teamId, setTeamId] = useState(null);
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [year, setYear] = useState(null);
 
-  const [ submitted, setSubmitted ] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const onTeamIdChange = e => setTeamId(e.target.value);
-  const onFirstChange = e => setFirstName(e.target.value);
+  const onFirstNameChange = e => setFirstName(e.target.value);
   const onLastNameChange = e => setLastName(e.target.value);
   const onYearChange = e => setYear(e.target.value);
 
@@ -45,7 +39,9 @@ export default () => {
       })
       .catch(e => {
         console.log(e);
-      })
+      });
+
+    <Redirect to='/team-roster' />
   };
 
   return (
@@ -67,55 +63,73 @@ export default () => {
       :
         <div>
           <div sx={{ m: `10px 0` }}>
-            ID:
+            Team:
             <span>
-              <input type="text" name="teamId" placeholder="Enter your teamId." onChange={onTeamIdChange} />
+              <input
+                type="text"
+                name="teamId"
+                placeholder="Enter your teamId."
+                onChange={onTeamIdChange}
+              />
             </span>
           </div>
           
           <div sx={{ m: `10px 0` }}>
             First Name:
             <span>
-              <input type="text" name="firstName" placeholder="Enter your first name." onChange={onFirstChange} />
+              <input
+                type="text"
+                name="firstName"
+                placeholder="Enter player's first name."
+                onChange={onFirstNameChange}
+              />
             </span>
           </div>
           
           <div sx={{ m: `10px 0` }}>
             Last Name:
             <span>
-              <input type="text" name="lastName" placeholder="Enter your last name." onChange={onLastNameChange} />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Enter player's last name."
+                onChange={onLastNameChange}
+              />
             </span>
           </div>
           
           <div sx={{ m: `10px 0` }}>
             Year: 
             <span>
-              <input type="text" name="year" placeholder="Enter the year you expect to graduate. " onChange={onYearChange} />
+              <input
+                type="text"
+                name="year"
+                placeholder="Enter the year the player is expect to graduate."
+                onChange={onYearChange}
+              />
             </span>
           </div>
           
-          <button
-            type="button"
+          <li
             sx={{
-              color: `white`,
-              backgroundColor: `green`,
-              borderRadius: `3px`
+              variant: `lis.success_medium`,
+              display: `inline-block`,
             }}
             onClick={savePlayer}
           >
             Create Player
-          </button>
-          
-          <button
-            type="submit"
+          </li>
+
+          <Link
+            to={`/team-roster`}
             sx={{
-              color: `white`,
-              backgroundColor: `green`,
-              borderRadius: `3px`
+              variant: `lis.caution_medium`,
+              display: `inline-block`,
+              textDecoration: `none`
             }}
           >
-            Delete Player
-          </button>
+            Cancel
+          </Link>
         </div>
       }
     </div>
