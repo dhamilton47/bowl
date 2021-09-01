@@ -10,9 +10,7 @@ const AppWrapped = hot(module)(
   () => {
     return (
       <ThemeProvider theme={theme}>
-        <BrowserRouter>
           <App />
-        </BrowserRouter>        
       </ThemeProvider>
     )
   }
@@ -20,7 +18,9 @@ const AppWrapped = hot(module)(
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppWrapped />
+    <BrowserRouter>
+      <AppWrapped />
+    </BrowserRouter>
   </React.StrictMode>,
   
   document.getElementById('root')
