@@ -9,7 +9,7 @@
     contentBase: path.join(__dirname, 'public/'),
     port: 3000,
     publicPath: 'http://localhost:3000/public/',
-    hotOnly: true,
+    hot: true,
   },
   devtool: 'inline-source-map',
   module: {
@@ -36,7 +36,6 @@
     new HtmlWebpackPlugin({
       title: 'Experimentation',
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
   resolve: { extensions: ["*", ".js", ".jsx"] },
  }
